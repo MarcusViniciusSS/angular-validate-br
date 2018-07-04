@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "angular-validate-br": {
+      "root": "projects/angular-validate-br",
+      "sourceRoot": "projects/angular-validate-br/src",
+      "projectType": "library",
+      "prefix": "val",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-validate-br/tsconfig.lib.json",
+            "project": "projects/angular-validate-br/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/angular-validate-br/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-validate-br/src/test.ts",
+            "tsConfig": "projects/angular-validate-br/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-validate-br/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-validate-br/tsconfig.lib.json",
+              "projects/angular-validate-br/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-validate-br-library"
