@@ -1,6 +1,13 @@
 {
   "name": "angular-validate-br",
   "version": "0.0.1-beta",
+  "license" : "MIT",
+  "author":"Marcus Vinicius Santana Silva",
+  "homepage": "https://github.com/Lowpoc/angular-validate-br",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Lowpoc/angular-validate-br"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

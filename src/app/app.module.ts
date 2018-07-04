@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { AngularValidateBrLibModule } from 'angular-validate-br';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AngularValidateBrLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
