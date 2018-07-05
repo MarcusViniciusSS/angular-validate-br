@@ -1,8 +1,17 @@
 {
   "name": "angular-validate-br",
-  "version": "0.0.1-beta",
+  "version": "0.0.3-beta",
   "license" : "MIT",
-  "author":"Marcus Vinicius Santana Silva",
+  "contributors": [
+    {
+      "name": "Marcus Vinicius",
+      "email": "marcus.vinicius.3007@gmail.com"
+    },
+    {
+      "name": "Erick Antunes",
+      "email": "erick.ants@gmail.com"
+    }
+  ],
   "homepage": "https://github.com/Lowpoc/angular-validate-br",
   "repository": {
     "type": "git",
