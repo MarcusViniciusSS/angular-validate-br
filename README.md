@@ -75,6 +75,11 @@ export class SampleComponent implements OnInit {
 </form>
 ```
 
+## Bugs and features
+
+Please, fell free to [open a new issue](https://github.com/Lowpoc/angular-validate-br/issues) on GitHub.
+
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
