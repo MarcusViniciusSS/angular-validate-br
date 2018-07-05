@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 import { PersonalData, ContactRequest } from '../../contact-request';
 import { ValidateBrService } from 'projects/angular-validate-br/src/public_api';
 
@@ -25,16 +25,16 @@ export class ContactComponent implements OnInit {
     return new FormGroup({
       personalData: new FormGroup({
         email: new FormControl('', [this.validateBrService.propName]),
-        mobile: new FormControl(),
-        country: new FormControl()
+        mobile: new FormControl('', [this.validateBrService.cpf]),
+        country: new FormControl('', [ this.validateBrService.cnpj ])
       }),
-      requestType: new FormControl(),
+      requestType: new FormControl('', [this.validateBrService.alphaNumeric]),
       text: new FormControl()
     });
   }
 
   onSubmit() {
-    console.log(this.contactForm.get('personalData').get('email'));
+    console.log(this.contactForm);
     // Make sure to create a deep copy of the form-model
     // const result: ContactRequest = Object.assign({}, this.contactForm.value);
     // result.personalData = Object.assign({}, result.personalData);

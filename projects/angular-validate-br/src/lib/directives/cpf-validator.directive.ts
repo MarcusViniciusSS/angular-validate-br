@@ -1,6 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { Cpf } from '../functions/cpf';
+import { Input } from '@angular/core';
 
 @Directive({
   selector: '[valCpf][ngModel]',
@@ -13,7 +14,16 @@ import { Cpf } from '../functions/cpf';
   ]
 })
 export class CpfValidatorDirective implements Validator {
-  validator: ValidatorFn;
+  private validator: ValidatorFn;
+  private _onChange: () => void;
+
+  @Input()
+  get validation(): ValidatorFn | null { return this.validator; }
+
+  set validation(value: ValidatorFn | null) {
+    this.validator =  value;
+    if (this._onChange) { this._onChange(); }
+  }
 
   constructor() {
     this.validator = this.cpfValidator();
@@ -23,7 +33,7 @@ export class CpfValidatorDirective implements Validator {
     return this.validator(c);
   }
 
-  cpfValidator (): ValidatorFn {
+  private cpfValidator (): ValidatorFn {
     return (c: AbstractControl) => {
       const isValid = new Cpf(c.value).validate();
       if (isValid) {
@@ -37,4 +47,6 @@ export class CpfValidatorDirective implements Validator {
       }
     };
   }
+
+  registerOnValidatorChange(fn: () => void): void { this._onChange = fn; }
 }

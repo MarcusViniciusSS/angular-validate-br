@@ -1,6 +1,6 @@
 {
   "name": "angular-validate-br",
-  "version": "0.0.6-beta",
+  "version": "0.0.9-beta",
   "license": "MIT",
   "contributors": [
     {
@@ -17,6 +17,17 @@
     "type": "git",
     "url": "git://github.com/Lowpoc/angular-validate-br"
   },
+  "keywords": [
+    "angular",
+    "cpf",
+    "cnpj",
+    "alphanumeric",
+    "alpha",
+    "null",
+    "typescript",
+    "validator",
+    "br"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

@@ -10,9 +10,9 @@ export class Cpf implements Anotation {
 
   validate(): boolean {
     // tslint:disable-next-line:prefer-const
+    if (this.document === '' || this.document === null || this.document === undefined) { return true; }
     const cpf = new OnlyNumbers(this.document).format();
-    if (cpf === '' || cpf === null || cpf === undefined) { return true; }
-
+    
     if (cpf.length !== 11) { return false; }
 
     // tslint:disable-next-line:curly

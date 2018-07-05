@@ -1,6 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { AlphaNumeric } from '../functions/alphanumeric';
+import { Input } from '@angular/core';
 
 @Directive({
   selector: '[valAlphaNumeric][ngModel]',
@@ -13,17 +14,26 @@ import { AlphaNumeric } from '../functions/alphanumeric';
   ]
 })
 export class AlphaNumericValidatorDirective implements Validator {
-  validator: ValidatorFn;
+  private validator: ValidatorFn;
+  private _onChange: () => void;
+
+  @Input()
+  get validation(): ValidatorFn | null { return this.validator; }
+
+  set validation(value: ValidatorFn | null) {
+    this.validator =  value;
+    if (this._onChange) { this._onChange(); }
+  }
 
   constructor() {
     this.validator = this.alphaNumericValidator();
   }
 
   validate(c: AbstractControl) {
-    return this.validator(c);
+    return this.validation ? this.validator(c) : null;
   }
 
-  alphaNumericValidator(): ValidatorFn {
+  private alphaNumericValidator(): ValidatorFn {
     return (c: AbstractControl) => {
       const isValid = new AlphaNumeric(c.value).validate();
       if (isValid) {
@@ -37,4 +47,6 @@ export class AlphaNumericValidatorDirective implements Validator {
       }
     };
   }
+
+  registerOnValidatorChange(fn: () => void): void { this._onChange = fn; }
 }

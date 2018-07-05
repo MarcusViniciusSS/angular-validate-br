@@ -1,6 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { Cnpj } from '../functions/cnpj';
+import { Input } from '@angular/core';
 
 @Directive({
   selector: '[valCnpj][ngModel]',
@@ -13,8 +14,17 @@ import { Cnpj } from '../functions/cnpj';
   ]
 })
 export class CnpjValidatorDirective implements Validator {
-  validator: ValidatorFn;
+  private validator: ValidatorFn;
+  private _onChange: () => void;
 
+  @Input()
+  get validation(): ValidatorFn | null { return this.validator; }
+
+  set validation(value: ValidatorFn | null) {
+    this.validator =  value;
+    if (this._onChange) { this._onChange(); }
+  }
+  
   constructor() {
     this.validator = this.cnpjValidator();
   }
@@ -23,7 +33,7 @@ export class CnpjValidatorDirective implements Validator {
     return this.validator(c);
   }
 
-  cnpjValidator (): ValidatorFn {
+  private cnpjValidator (): ValidatorFn {
     return (c: AbstractControl) => {
       const isValid = new Cnpj(c.value).validate();
       if (isValid) {
@@ -37,4 +47,6 @@ export class CnpjValidatorDirective implements Validator {
       }
     };
   }
+
+  registerOnValidatorChange(fn: () => void): void { this._onChange = fn; }
 }

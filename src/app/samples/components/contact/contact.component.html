@@ -2,6 +2,7 @@
   <div formGroupName="personalData" novalidate>
     <input formControlName="email">
     <input formControlName="mobile">
+    <!-- <input formControlName="country"> -->
     <select formControlName="country">
       <option *ngFor="let country of countries" [value]="country">{{country}}</option>
     </select>

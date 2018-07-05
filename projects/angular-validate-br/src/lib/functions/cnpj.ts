@@ -9,9 +9,10 @@ export class Cnpj implements Anotation {
   }
 
   validate(): boolean {
+    
+    if (this.document === '' || this.document === null || this.document === undefined) { return true; }
+    
     const cnpj = new OnlyNumbers(this.document).format();
-
-    if (cnpj === '' || cnpj === null || cnpj === undefined) { return true; }
 
     if (cnpj.length !== 14) { return false; }
 
