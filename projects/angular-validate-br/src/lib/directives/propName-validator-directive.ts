@@ -1,7 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive, Input } from '@angular/core';
 import { isNullOrUndefined } from 'util';
-import { PropName } from '../functions/anotations/propName';
+import { PropName } from '../functions/propName';
 
 @Directive({
   selector: '[valPropName][ngModel]',

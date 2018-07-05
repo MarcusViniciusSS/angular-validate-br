@@ -1,5 +1,5 @@
-import { OnlyNumbers } from '../formatters/onlyNumbers';
 import { Anotation } from './anotation';
+import { OnlyNumbers } from './onlyNumbers';
 
 export class Cpf implements Anotation {
   document: string;

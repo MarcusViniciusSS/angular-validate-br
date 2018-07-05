@@ -1,6 +1,6 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
-import { Cnpj } from '../functions/anotations/cnpj';
+import { Cnpj } from '../functions/cnpj';
 
 @Directive({
   selector: '[valCnpj][ngModel]',

@@ -10,13 +10,13 @@ import { PropNameValidatorDirective } from '../directives/propName-validator-dir
     AlphaNumericValidatorDirective,
     CnpjValidatorDirective,
     CpfValidatorDirective,
-    PropNameValidatorDirective
+    PropNameValidatorDirective,
   ],
   exports: [
     AlphaNumericValidatorDirective,
     CnpjValidatorDirective,
     CpfValidatorDirective,
-    PropNameValidatorDirective
+    PropNameValidatorDirective,
   ]
 })
 export class AngularValidateBrLibModule {}

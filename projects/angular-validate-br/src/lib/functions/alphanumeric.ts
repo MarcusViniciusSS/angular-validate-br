@@ -1,5 +1,5 @@
-import { NoAccents } from '../formatters/noAccents';
 import { Anotation } from './anotation';
+import { NoAccents } from './noAccents';
 
 export class AlphaNumeric implements Anotation {
   value: string;

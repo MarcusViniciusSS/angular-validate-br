@@ -1,6 +1,6 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
-import { Cpf } from '../functions/anotations/cpf';
 import { Directive } from '@angular/core';
+import { Cpf } from '../functions/cpf';
 
 @Directive({
   selector: '[valCpf][ngModel]',

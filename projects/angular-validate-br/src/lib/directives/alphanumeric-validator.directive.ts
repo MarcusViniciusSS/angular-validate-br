@@ -1,6 +1,6 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
-import { AlphaNumeric } from '../functions/anotations/alphanumeric';
+import { AlphaNumeric } from '../functions/alphanumeric';
 
 @Directive({
   selector: '[valAlphaNumeric][ngModel]',

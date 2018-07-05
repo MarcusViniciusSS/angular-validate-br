@@ -1,0 +1,15 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+  <div formGroupName="personalData" novalidate>
+    <input formControlName="email">
+    <input formControlName="mobile">
+    <select formControlName="country">
+      <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+    </select>
+  </div>
+  <select formControlName="requestType">
+    <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
+  </select>
+  <input formControlName="text">
+  <button type="submit" [disabled]="contactForm.pristine">Save</button>
+  <button type="reset" (click)="revert()" [disabled]="contactForm.pristine">Revert</button>
+</form>
