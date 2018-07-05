@@ -24,11 +24,11 @@ export class ContactComponent implements OnInit {
   createFormGroup() {
     return new FormGroup({
       personalData: new FormGroup({
-        email: new FormControl('', [this.validateBrService.propName]),
-        mobile: new FormControl('', [this.validateBrService.cpf]),
-        country: new FormControl('', [ this.validateBrService.cnpj ])
+        email: new FormControl('', [this.validateBrService.alpha]),
+        mobile: new FormControl('', [this.validateBrService.decimal]),
+        country: new FormControl('', [ this.validateBrService.decimal])
       }),
-      requestType: new FormControl('', [this.validateBrService.alphaNumeric]),
+      requestType: new FormControl('', [this.validateBrService.url]),
       text: new FormControl()
     });
   }
