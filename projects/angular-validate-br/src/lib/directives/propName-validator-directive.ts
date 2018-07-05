@@ -1,5 +1,5 @@
-import { Validator, ValidatorFn, NG_VALIDATORS, FormControl, AbstractControl } from '@angular/forms';
-import { Directive } from '@angular/core';
+import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
+import { Directive, Input } from '@angular/core';
 import { isNullOrUndefined } from 'util';
 import { PropName } from '../functions/anotations/propName';
 
@@ -14,17 +14,26 @@ import { PropName } from '../functions/anotations/propName';
   ]
 })
 export class PropNameValidatorDirective implements Validator {
-  validator: ValidatorFn;
+  private validator: ValidatorFn;
+  private _onChange: () => void;
+
+  @Input()
+  get validation(): ValidatorFn | null { return this.validator; }
+
+  set validation(value: ValidatorFn | null) {
+    this.validator =  value;
+    if (this._onChange) { this._onChange(); }
+  }
 
   constructor() {
     this.validator = this.propNameValidator();
   }
 
-  validate (c: AbstractControl) {
-    return this.validator(c);
+  validate(c: AbstractControl) {
+    return this.validation ? this.validator(c) : null;
   }
 
-  propNameValidator (): ValidatorFn {
+  private propNameValidator(): ValidatorFn {
     return (c: AbstractControl) => {
       const str = <string>c.value;
       if (isNullOrUndefined(str) || str.trim() === '') {
@@ -42,4 +51,6 @@ export class PropNameValidatorDirective implements Validator {
       }
     };
   }
+
+  registerOnValidatorChange(fn: () => void): void { this._onChange = fn; }
 }
