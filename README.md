@@ -66,7 +66,7 @@ export class SampleComponent implements OnInit {
   </div>
   <div>
     <input type="text" required ValCnpj [(ngModel)]="sample.cnpj" #cnpj="ngModel" name="cnpj" class="form-control">
-    <span *ngIf="cnpj.errors.cpfvalidator && (cnpj.dirty || cnpj.touched)"> Cnpj is invalid</span>
+    <span *ngIf="cnpj.errors.cnpjvalidator && (cnpj.dirty || cnpj.touched)"> Cnpj is invalid</span>
   </div>
   <div>
     <input type="text" required ValUrl [(ngModel)]="sample.url" #url="ngModel" name="url" class="form-control">
@@ -84,4 +84,4 @@ Please, fell free to [open a new issue](https://github.com/Lowpoc/angular-valida
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016 Marcus Vinicius(@Lowpoc) & Erick Antunes(@erickants)
+Copyright (c) 2018 Marcus Vinicius(@Lowpoc) & Erick Antunes(@erickants)
