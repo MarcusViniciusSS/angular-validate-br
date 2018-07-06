@@ -1,5 +1,5 @@
 import { Anotation } from './anotation';
-import { OnlyNumbers } from './onlyNumbers';
+import { OnlyNumbers } from './onlyNumbers.formatter';
 
 export class Cnpj implements Anotation {
   document: string;
@@ -9,9 +9,9 @@ export class Cnpj implements Anotation {
   }
 
   validate(): boolean {
-    
+
     if (this.document === '' || this.document === null || this.document === undefined) { return true; }
-    
+
     const cnpj = new OnlyNumbers(this.document).format();
 
     if (cnpj.length !== 14) { return false; }

@@ -1,7 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { Input } from '@angular/core';
-import { Integer } from '../functions/integer';
+import { Integer } from '../functions/integer.anotation';
 
 @Directive({
   selector: '[valInteger][ngModel]',

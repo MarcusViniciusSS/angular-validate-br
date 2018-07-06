@@ -1,6 +1,6 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
-import { Cpf } from '../functions/cpf';
+import { Cpf } from '../functions/cpf.anotation';
 import { Input } from '@angular/core';
 
 @Directive({

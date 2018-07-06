@@ -1,6 +1,6 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
-import { Cnpj } from '../functions/cnpj';
+import { Cnpj } from '../functions/cnpj.anotation';
 import { Input } from '@angular/core';
 
 @Directive({
@@ -24,7 +24,7 @@ export class CnpjValidatorDirective implements Validator {
     this.validator =  value;
     if (this._onChange) { this._onChange(); }
   }
-  
+
   constructor() {
     this.validator = this.cnpjValidator();
   }
