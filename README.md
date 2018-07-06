@@ -18,6 +18,7 @@ npm install angular-validate-br --save
 To use the benefits of the library simply import the dependency in your class or module to have the resources at your disposal.
 
   * Reactive Forms
+
 ```typescript
 //Reactive forms
 import { ValidateBrService } from 'angular-validate-br';
