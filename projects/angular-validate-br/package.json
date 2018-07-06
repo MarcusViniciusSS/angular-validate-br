@@ -1,6 +1,6 @@
 {
   "name": "angular-validate-br",
-  "version": "0.0.9-beta",
+  "version": "0.1.0-beta",
   "license": "MIT",
   "contributors": [
     {
@@ -12,7 +12,7 @@
       "email": "erick.ants@gmail.com"
     }
   ],
-  "homepage": "https://github.com/Lowpoc/angular-validate-br",
+  "homepage": "https://lowpoc.github.io/angular-validate-br/",
   "repository": {
     "type": "git",
     "url": "git://github.com/Lowpoc/angular-validate-br"

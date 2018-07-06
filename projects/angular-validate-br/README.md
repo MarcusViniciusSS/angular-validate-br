@@ -5,6 +5,8 @@
 
 > Library to projects on Angular to validate especific inputs with Brazilian rules.
 
+> [Website](https://lowpoc.github.io/angular-validate-br/)
+
 ## Installation
 
 ```bash
@@ -23,7 +25,7 @@ import { ValidateBrService } from 'angular-validate-br';
   selector: 'lib-sample',
   templateUrl: './sample.component.html',
   styleUrls: ['./samle.component.css']
-})
+})  
 export class SampleComponent implements OnInit {
   sampleForm: FormGroup;
   
@@ -84,4 +86,4 @@ Please, fell free to [open a new issue](https://github.com/Lowpoc/angular-valida
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016 Marcus Vinicius(@Lowpoc) & Erick Antunes(@erickants)
+Copyright (c) 2018 Marcus Vinicius(@Lowpoc) & Erick Antunes(@erickants)

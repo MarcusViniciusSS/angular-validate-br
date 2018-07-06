@@ -5,6 +5,8 @@
 
 > Library to projects on Angular to validate especific inputs with Brazilian rules.
 
+> [Website](https://lowpoc.github.io/angular-validate-br/)
+
 ## Installation
 
 ```bash
@@ -23,7 +25,7 @@ import { ValidateBrService } from 'angular-validate-br';
   selector: 'lib-sample',
   templateUrl: './sample.component.html',
   styleUrls: ['./samle.component.css']
-})
+})  
 export class SampleComponent implements OnInit {
   sampleForm: FormGroup;
   
@@ -66,7 +68,7 @@ export class SampleComponent implements OnInit {
   </div>
   <div>
     <input type="text" required ValCnpj [(ngModel)]="sample.cnpj" #cnpj="ngModel" name="cnpj" class="form-control">
-    <span *ngIf="cnpj.errors.cnpjvalidator && (cnpj.dirty || cnpj.touched)"> Cnpj is invalid</span>
+    <span *ngIf="cnpj.errors.cpfvalidator && (cnpj.dirty || cnpj.touched)"> Cnpj is invalid</span>
   </div>
   <div>
     <input type="text" required ValUrl [(ngModel)]="sample.url" #url="ngModel" name="url" class="form-control">
