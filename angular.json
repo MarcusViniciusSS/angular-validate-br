@@ -23,10 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/scss/bootstrap.scss"
+              "src/assets/scss/app.scss"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/admin4b/dist/admin4b.min.js"
             ]
           },
           "configurations": {
