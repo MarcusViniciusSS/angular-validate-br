@@ -1,5 +1,5 @@
 import { Anotation } from './anotation';
-import { OnlyNumbers } from './onlyNumbers';
+import { OnlyNumbers } from './onlyNumbers.formatter';
 
 export class Cpf implements Anotation {
   document: string;
@@ -12,7 +12,7 @@ export class Cpf implements Anotation {
     // tslint:disable-next-line:prefer-const
     if (this.document === '' || this.document === null || this.document === undefined) { return true; }
     const cpf = new OnlyNumbers(this.document).format();
-    
+
     if (cpf.length !== 11) { return false; }
 
     // tslint:disable-next-line:curly

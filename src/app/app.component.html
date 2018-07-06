@@ -2,58 +2,74 @@
   <div class="row col-12">
     <div class="col-6">
       <a class="navbar-brand" href="https://github.com/Lowpoc/angular-validate-br" target="_blank">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+        <img src="../assets/brasil.png"
           width="30" height="30" class="d-inline-block align-top" alt=""> Angular Validate Br
       </a>
     </div>
     <div class="col-6"></div>
   </div>
 </nav>
-<div class="container-fluid">
-    <form [formGroup]="sampleForm">
-      <div class="form-row">
-        <div class="form-group col-md-3">
-          <label for="inputEmail4">Cpf</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="inputPassword4">Cnpj</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+<div class="container-fluid pt-2">
+  <form [formGroup]="sampleForm">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputEmail4">Cpf</label>
+        <input formControlName="cpf" type="text" class="form-control" id="cpf" placeholder="validate cpf">
+        <div class="text-danger" *ngIf="sampleForm.get('cpf').invalid && (sampleForm.get('cpf').dirty || sampleForm.get('cpf').touched)">
+          <small *ngIf="sampleForm.get('cpf').errors.cpfvalidator">Cpf is invalid.</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Cnpj</label>
+        <input type="text" formControlName="cnpj" class="form-control" id="inputCnpj" placeholder="validate cnpj">
+        <div class="text-danger" *ngIf="sampleForm.get('cnpj').invalid && (sampleForm.get('cnpj').dirty || sampleForm.get('cnpj').touched)">
+          <small *ngIf="sampleForm.get('cnpj').errors.cnpjvalidator"> Cnpj is invalid.</small>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
         <label for="inputAddress">Url</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Decimal</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
+        <input type="text" formControlName="url" class="form-control" id="inputUrl" placeholder="validate url">
+        <div class="text-danger" *ngIf="sampleForm.get('url').invalid && (sampleForm.get('url').dirty || sampleForm.get('url').touched)">
+          <small *ngIf="sampleForm.get('url').errors.urlvalidator"> Url is invalid.</small>
         </div>
       </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
+      <div class="form-group col-md-3">
+        <label for="inputAddress2">Integer</label>
+        <input type="text" formControlName="integer" class="form-control" id="inputInteger" placeholder="validate integer">
+        <div class="text-danger" *ngIf="sampleForm.get('integer').invalid && (sampleForm.get('integer').dirty || sampleForm.get('integer').touched)">
+          <small *ngIf="sampleForm.get('integer').errors.integervalidator"> Integer is invalid.</small>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Validate</button>
-    </form>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputCity">PropName</label>
+        <input type="text" formControlName="propName" class="form-control" id="inputPropName" placeholder="validate propName">
+        <div class="text-danger" *ngIf="sampleForm.get('propName').invalid && (sampleForm.get('propName').dirty || sampleForm.get('propName').touched)">
+          <small *ngIf="sampleForm.get('propName').errors.propnamevalidator"> PropName is invalid.</small>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputCity">Alpha</label>
+        <input type="text" formControlName="alpha" class="form-control" id="inputalpha" placeholder="validate alpha" >
+        <div class="text-danger" *ngIf="sampleForm.get('alpha').invalid && (sampleForm.get('alpha').dirty || sampleForm.get('alpha').touched)">
+          <small *ngIf="sampleForm.get('alpha').errors.alphavalidator"> Alpha is invalid.</small>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputCity">AlphaNumeric</label>
+        <input type="text" formControlName="alphaNumeric" class="form-control" id="inputalphaNumeric" placeholder="validate alphanumeric" >
+        <div class="text-danger" *ngIf="sampleForm.get('alphaNumeric').invalid && (sampleForm.get('alphaNumeric').dirty || sampleForm.get('alphaNumeric').touched)">
+          <small *ngIf="sampleForm.get('alphaNumeric').errors.alphanumericvalidator"> AlphaNumeric is invalid.</small>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputCity">Decimal</label>
+        <input type="text" formControlName="decimal" class="form-control" id="inputDecimal" placeholder="validate decimal">
+        <div class="text-danger" *ngIf="sampleForm.get('decimal').invalid && (sampleForm.get('decimal').dirty || sampleForm.get('decimal').touched)">
+          <small *ngIf="sampleForm.get('decimal').errors.decimalvalidator"> Decimal is invalid.</small>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

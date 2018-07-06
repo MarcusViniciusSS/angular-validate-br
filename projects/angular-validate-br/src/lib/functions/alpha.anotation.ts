@@ -1,7 +1,6 @@
 import { Anotation } from './anotation';
-import { NoAccents } from './noAccents';
 
-export class AlphaNumeric implements Anotation {
+export class Alpha implements Anotation {
   value: string;
 
   constructor(value: string) {
@@ -9,12 +8,12 @@ export class AlphaNumeric implements Anotation {
   }
 
   validate(): boolean {
-    const str = new NoAccents(this.value).format();
+    const str = this.value;
     if (!str) {
       return true;
     }
     // tslint:disable-next-line:quotemark
-    const pattern = "^[a-zA-Z0-9'&()ºª°\\-\\/,.\\s]+$";
+    const pattern = "^[a-zA-Z]*$";
     const regex = new RegExp(pattern);
     return regex.test(str);
   }

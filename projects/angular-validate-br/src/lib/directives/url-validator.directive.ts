@@ -1,7 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { Input } from '@angular/core';
-import { Url } from '../functions/url';
+import { Url } from '../functions/url.anotation';
 
 @Directive({
   selector: '[valUrl][ngModel]',

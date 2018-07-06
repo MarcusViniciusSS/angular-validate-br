@@ -1,5 +1,5 @@
 import { Anotation } from './anotation';
-import { NoAccents } from './noAccents';
+import { NoAccents } from './noAccents.formatter';
 
 export class PropName implements Anotation {
   name: string;

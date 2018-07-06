@@ -11,8 +11,7 @@ export class Decimal implements Anotation {
         if (!this.value) {
             return true;
         }
-        // tslint:disable-next-line:quotemark
-        const pattern = "^[-]?\d*(\.\d+)?$";
+        const pattern = '^[0-9]+(\.[0-9]{1,2})?$';
         const regex = new RegExp(pattern);
         return regex.test(this.value);
     }

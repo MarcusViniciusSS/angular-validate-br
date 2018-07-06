@@ -1,4 +1,6 @@
-export class OnlyNumbers {
+import { Formatter } from './formatter';
+
+export class OnlyNumbers implements Formatter {
 
   constructor (private value: any) { }
 

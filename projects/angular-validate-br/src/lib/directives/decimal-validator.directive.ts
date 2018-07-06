@@ -1,7 +1,7 @@
 import { Validator, ValidatorFn, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { Directive } from '@angular/core';
 import { Input } from '@angular/core';
-import { Decimal } from '../functions/decimal';
+import { Decimal } from '../functions/decimal.anotation';
 
 @Directive({
     selector: '[valDecimal][ngModel]',
